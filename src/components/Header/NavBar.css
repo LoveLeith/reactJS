@@ -1,0 +1,36 @@
+.navbar-light .navbar-brand {
+    color:#f075ad;
+}
+.marca-nombre {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.barra-nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-right: 50px;
+}
+
+.navbar-nav {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #104a79;
+}
+.navbar-nav .nav-item .nav-link {
+    color: #104a79;
+}
