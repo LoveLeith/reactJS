@@ -1,0 +1,7 @@
+.input-styles { 
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+}

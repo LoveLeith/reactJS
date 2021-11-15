@@ -1,5 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBar.css'
+import CartWidget from '../../components/CartWidget/CartWidget.jsx'
+
 
 const NavBar = () => {
     return (
@@ -27,10 +29,12 @@ const NavBar = () => {
                     </ul>
                     </div>
                 </div>
+                <div>
+                    <CartWidget />
+                </div>
             </nav>
+            
         </header>
-        
-
     )
 }
 export default NavBar; 

@@ -1,0 +1,14 @@
+.greetingContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 250px;
+}
+
+.greetingStyle {
+    font-family: sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: #f075ad;
+    
+}
