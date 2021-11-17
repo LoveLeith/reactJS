@@ -1,0 +1,51 @@
+export const products = [
+    {
+        id: 1,
+        name: 'Top Iris Estampa Baby',
+        price: 2900,
+        stock: 10,
+        img: 'img/top_iris_estampa_baby.jpeg',
+    },
+    {
+        id: 2,
+        name: 'Top Lily Estampa Amatista',
+        price: 2900,
+        stock: 10,
+        img: 'img/top_lily_estampa_amatista.jpeg',
+    },
+    {
+        id: 3,
+        name: 'Top Iris Flower Power',
+        price: 2900,
+        stock: 10,
+        img: 'img/top_iris_estampa_flower_power.jpeg',
+    },
+    {
+        id: 4,
+        name: 'Biker Estampa Baby',
+        price: 2900,
+        stock: 10,
+        img: 'img/biker_estampa_baby.jpeg',
+    },
+    {
+        id: 5,
+        name: 'Biker Estampa Flower Power',
+        price: 2900,
+        stock: 10,
+        img: 'img/biker_estampa_flower_power.jpeg',
+    },
+    {
+        id: 6,
+        name: 'Biker Estampa Mudras',
+        price: 2900,
+        stock: 10,
+        img: 'img/biker_estampa_mudras.jpeg',
+    },
+    {
+        id: 7,
+        name: 'Biker Estampa Psicodélica',
+        price: 2900,
+        stock: 10,
+        img: 'img/biker_estampa_psicodelica.jpeg',
+    },
+];
