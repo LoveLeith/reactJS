@@ -2,8 +2,10 @@ import './ItemListContainer.css';
 import React, {useState, useEffect} from 'react';
 import ItemList from './ItemList';
 import { products } from './Items';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = (props) => {
+    const {categoryId} = useParams()
     const [items, setItems] = useState([])
 
     useEffect(() => {
@@ -14,12 +16,13 @@ const ItemListContainer = (props) => {
         })
         bringProducts
             .then((res) => {
-                setItems(res);
+                const filtrado = res.filter((prod) => prod.categoryId === `${categoryId}`);
+                categoryId === undefined ? setItems(res) : setItems(filtrado);
             })
             .catch((error) => {
                 console.log(error);
             })
-    }, []);
+    }, [categoryId]);
     
 
     return (

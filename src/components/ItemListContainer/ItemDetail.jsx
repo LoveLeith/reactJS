@@ -1,22 +1,20 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './ItemStyle.css';
-import { Link } from 'react-router-dom';
+import React from 'react'
 
-const Item = ({ item }) => {
+const ItemDetail = ({ item }) => {
     return (
         <>
             <div className="card mb-3">
                     <div className="row no-gutters">
                         <div className="col-md-2">
-                        <Link to={`/item/${item.id}`}>
                             <img src={item.img} className="card-img" alt="..." />
-                        </Link>
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
                             <h5 className="card-title">{item.name}</h5>
+                            <p className="card-text">5% de descuento pagando por transferencia bancaria o efectivo</p>
+                            <p className="card-text">Talle: 1/2</p>
                             <p className="card-text">Precio: ${item.price}</p>
+                            <p className="card-text">Envío gratis a todo el país a partir de $5000</p>
                         </div>                      
                         </div>
                     </div>
@@ -25,4 +23,4 @@ const Item = ({ item }) => {
     )
 }
 
-export default Item;
+export default ItemDetail;
