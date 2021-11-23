@@ -1,4 +1,6 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetailStyle.css';
 
 const ItemDetail = ({ item }) => {
     return (
@@ -10,15 +12,19 @@ const ItemDetail = ({ item }) => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                            <h5 className="card-title">{item.name}</h5>
-                            <p className="card-text">5% de descuento pagando por transferencia bancaria o efectivo</p>
-                            <p className="card-text">Talle: 1/2</p>
-                            <p className="card-text">Precio: ${item.price}</p>
-                            <p className="card-text">Envío gratis a todo el país a partir de $5000</p>
-                        </div>                      
+                                <h5 className="card-title textoCuerpo--fontFamily textoCuerpo--fontSize">{item.name}</h5>
+                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize">5% de descuento pagando por transferencia bancaria o efectivo</p>
+                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontSize">Talle: 1/2</p>
+                                <p className="textoCuerpo--fontFamily textoCuerpo--fontSize">Stock disponible: {item.stock} unidades</p>
+                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize">Precio: ${item.price}</p>
+                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontSize">Envío gratis a todo el país a partir de $5000</p>
+                            </div>   
+                            <div className = "stockCounterContainer">
+                                <ItemCount stock = {item.stock}/>
+                            </div>         
                         </div>
                     </div>
-            </div>            
+            </div>      
         </>
     )
 }
