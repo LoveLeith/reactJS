@@ -36,7 +36,9 @@ Uso de React Router Dom para la navegación.
 
 ------
 
-![Alima en funcionamiento] (https://github.com/LoveLeith/reactJS/blob/master/alima.gif)
+[Alima en funcionamiento](https://github.com/LoveLeith/reactJS/blob/master/alima.gif) 
+
+
 
 Autor:
 
