@@ -7,8 +7,10 @@ import './ItemDetailStyle.css';
 const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState({});
+    const [loader, setLoader] = useState(true);
 
     useEffect(() => {
+        setLoader(true);
         const bringProduct = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(products);
@@ -22,10 +24,12 @@ const ItemDetailContainer = () => {
         })
         .catch((error) => {
             console.log(error);
+        }).finally(() => {
+            setLoader(false);
         });
     }, [id]);
 
-    return (
+    return (loader ? <h1>Loading product...</h1>:
         <>
             <div className = "detailContainer">
                 <ItemDetail item = {item} /> 

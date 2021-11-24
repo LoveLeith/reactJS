@@ -7,8 +7,10 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = (props) => {
     const {categoryId} = useParams()
     const [items, setItems] = useState([])
+    const [loader, setLoader] = useState(true);
 
     useEffect(() => {
+        setLoader(true);
         const bringProducts = new Promise ((resolve, reject) => {
             setTimeout(() => {
                 resolve(products)
@@ -21,11 +23,13 @@ const ItemListContainer = (props) => {
             })
             .catch((error) => {
                 console.log(error);
-            })
+            }).finally(() => {
+                setLoader(false);
+            });
     }, [categoryId]);
     
 
-    return (
+    return (loader ? <h1>Loading products...</h1>:
         <div className = "greetingContainer">
             <h1 className = "greetingStyle">{props.greeting}</h1>
             <ItemList items = {items}/>
