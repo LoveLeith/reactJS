@@ -8,6 +8,7 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState({});
     const [loader, setLoader] = useState(true);
+    const [irAlCarrito, setIrAlCarrito] = useState(false);
 
     useEffect(() => {
         setLoader(true);
@@ -29,10 +30,15 @@ const ItemDetailContainer = () => {
         });
     }, [id]);
 
+    const onAdd = (cantidad) => {
+        console.log({ ...item, quantity: cantidad });
+        setIrAlCarrito(true)
+    }
+
     return (loader ? <h1>Loading product...</h1>:
         <>
             <div className = "detailContainer">
-                <ItemDetail item = {item} /> 
+                <ItemDetail item = {item} onAdd = {onAdd} irAlCarrito = {irAlCarrito}/> 
             </div>
                      
         </>

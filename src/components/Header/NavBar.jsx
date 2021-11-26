@@ -25,7 +25,7 @@ const NavBar = () => {
                         <Link to="/category/bikers" className="nav-link" href="#">Bikers</Link>
                         </li>
                         <li className="nav-item">
-                        <Link to="/contador" className="nav-link" href="#">Contador</Link>
+                        <Link to="/cart" className="nav-link" href="#">Cart</Link>
                         </li>
                     </ul>
                     </div>

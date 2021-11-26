@@ -1,8 +1,9 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetailStyle.css';
+import { Link } from 'react-router-dom';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item , onAdd, irAlCarrito }) => {
     return (
         <>
             <div className="card mb-3">
@@ -20,8 +21,18 @@ const ItemDetail = ({ item }) => {
                                 <p className="textoCuerpo--fontFamily textoCuerpo--fontSize">Stock disponible: {item.stock} unidades</p>
                             </div>   
                             <div className = "stockCounterContainer">
-                                <ItemCount stock = {item.stock}/>
-                            </div>         
+                                {irAlCarrito ? (
+                                    <>
+                                        <Link to='/cart'>
+                                        <button type="button" className="btn btn-secondary btn-sm btn-ml">Finalizar compra</button>
+                                        </Link>
+                                    </>
+                                ) : (
+                                    <>
+                                         <ItemCount stock = {item.stock} onAdd = {onAdd}/>
+                                    </>
+                                )}                                
+                           </div>         
                         </div>
                     </div>
             </div>      

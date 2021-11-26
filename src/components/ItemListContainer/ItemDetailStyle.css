@@ -12,6 +12,11 @@
 .textoCuerpo--fontWeight{
     font-weight: bold;
 }
+
 .textoCuerpo--fontSize {
     font-size: 16px;
+}
+
+.btn-ml {
+    margin-left: 15px;
 }
