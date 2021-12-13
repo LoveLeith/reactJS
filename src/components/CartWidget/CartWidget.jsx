@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
     const {unidades} = useContext(CartContext);
 
-    return (
+    return ( 
         <>
             <div className = "cartContainer">
             <IoCartOutline className = "cart" />
