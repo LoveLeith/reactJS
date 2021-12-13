@@ -2,13 +2,22 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import { useDeleteFromCart } from '../../context/CartContext';
 import './Cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
     const {cart, borrar, total} = useContext(CartContext);
     const deleteProduct = useDeleteFromCart();
 
-    return (
+    return ( cart.length === 0 ? 
+        <div className = "zeroProductsContainer">
+            <h1 className = "zeroProductsTitle">Aún no hay productos en el carrito</h1>
+            <p className = "zeroProductsSubtitle">Hacé clic en el botón para volver al Home</p>
+            <Link to='/'>
+                <button type="button" className="btn btn-secondary btn-sm">Volver al Home</button>
+            </Link>
+        </div>
+        :
         <>
             {cart.map((item) =>(
                 <div key = {item.id}>
@@ -31,12 +40,14 @@ const Cart = () => {
                 </div>  
                 </div>
             ))}
-            <p>Total: ${total()}</p>
+
+            <div className = "priceContainer">
+                <p className = "totalPrice">Total: ${total()}</p>
+            </div>
+            
             <button onClick={borrar} type="button" className="btn btn-secondary btn-sm btn-ml">Eliminar productos</button>
         </>
     )
 };
 
 export default Cart;
-
-//<button class="btn-dark btn-delete" onClick={() => deleteProduct(item)}> x </button>

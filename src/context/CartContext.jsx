@@ -33,7 +33,7 @@ export const CartProvider = ({children}) => {
         setCart(cantidad);
     }
 
-    //Borrar un producto especifico del carrito
+    //Borro un producto especifico del carrito
     const deleteFromCart = (item) => {
         setCart(cart.filter(element => element.id !== item.id))
     }
@@ -43,8 +43,14 @@ export const CartProvider = ({children}) => {
         setCart([])
     }
 
+    //Muestro las unidades totales del carrito en el icono del carrito
+    const unidades = () => {
+        const unidadesCart = cart.reduce((x, y) => x + y.cantidad, 0);
+        return unidadesCart;
+    }
+
     return(
-        <CartContext.Provider value = {{ addToCart, cart, borrar, deleteFromCart, total }}>
+        <CartContext.Provider value = {{ addToCart, cart, borrar, deleteFromCart, total, unidades }}>
             {children}
         </CartContext.Provider>
     )

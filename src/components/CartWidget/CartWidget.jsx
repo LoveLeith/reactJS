@@ -1,10 +1,20 @@
-import Carrito from './Assets/Images/carticon.png';
-import './CartWidget.css'
+import React, { useContext } from 'react';
+import './CartWidget.css';
+import { IoCartOutline } from "react-icons/io5";
+import { CartContext } from '../../context/CartContext';
 
 const CartWidget = () => {
+    const {unidades} = useContext(CartContext);
+
     return (
-        <img src = {Carrito} className = "cartStyle" alt = "imagen carrito"/>
+        <>
+            <div className = "cartContainer">
+            <IoCartOutline className = "cart" />
+            <span>{unidades()}</span>
+            </div>
+        </>  
     )
 }
 
 export default CartWidget
+
