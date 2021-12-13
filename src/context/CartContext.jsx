@@ -10,25 +10,28 @@ export const CartProvider = ({children}) => {
         return cart?.findIndex(element => element.id === item.id)
     }
     const addToCart = (item, cantidad) => {
+        total();
         if(isInCart(item) === -1) { 
             setCart([...cart, {...item, cantidad}]);
         }
         else {
-            let itemAux = cart.find(p => p.id === item.id)
-            let itemAux2 = {
-                id: itemAux.id,
-                name: itemAux.name,
-                price: itemAux.price,
-                stock: itemAux.stock,
-                img: itemAux.img,
-                categoryId: itemAux.categoryId,
-                cartCount: itemAux.cartCount + cantidad,
-            };
-            const cartAux = (cart.filter(element => element.id !== itemAux.id))
-            setCart([...cartAux, itemAux2])
+            sumarCantidad(item, cantidad);
         }
         console.log(cart);
     };
+
+    const total = () => {
+        const sumaTotal = cart.reduce((x, y) => x + y.price * y.cantidad, 0);
+        return sumaTotal;
+    };
+
+    const sumarCantidad = (item, quantity) => {
+        const cantidad = [...cart];
+        cantidad.forEach((c) => {
+            c.id === item.id && (c.cantidad += quantity);
+        });
+        setCart(cantidad);
+    }
 
     //Borrar un producto especifico del carrito
     const deleteFromCart = (item) => {
@@ -41,7 +44,7 @@ export const CartProvider = ({children}) => {
     }
 
     return(
-        <CartContext.Provider value = {{ addToCart, cart, borrar, deleteFromCart }}>
+        <CartContext.Provider value = {{ addToCart, cart, borrar, deleteFromCart, total }}>
             {children}
         </CartContext.Provider>
     )

@@ -5,7 +5,7 @@ import './Cart.css';
 
 const Cart = () => {
 
-    const {cart, borrar} = useContext(CartContext);
+    const {cart, borrar, total} = useContext(CartContext);
     const deleteProduct = useDeleteFromCart();
 
     return (
@@ -31,7 +31,7 @@ const Cart = () => {
                 </div>  
                 </div>
             ))}
-
+            <p>Total: ${total()}</p>
             <button onClick={borrar} type="button" className="btn btn-secondary btn-sm btn-ml">Eliminar productos</button>
         </>
     )
