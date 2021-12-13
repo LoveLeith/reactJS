@@ -6,6 +6,7 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607748/Alima/top_iris_estampa_baby_dmjoaa.jpg',
         categoryId: 'tops',
+        cartCount: 0,
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607765/Alima/top_lily_estampa_amatista_xmgdlh.jpg',
         categoryId: 'tops',
+        cartCount: 0,
     },
     {
         id: 3,
@@ -22,6 +24,7 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607758/Alima/top_iris_estampa_flower_power_gvkzow.jpg',
         categoryId: 'tops',
+        cartCount: 0,
     },
     {
         id: 4,
@@ -30,6 +33,7 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607711/Alima/biker_estampa_baby_vk9kax.jpg',
         categoryId: 'bikers',
+        cartCount: 0,
     },
     {
         id: 5,
@@ -38,6 +42,7 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607720/Alima/biker_estampa_flower_power_f73chp.jpg',
         categoryId: 'bikers',
+        cartCount: 0,
     },
     {
         id: 6,
@@ -46,6 +51,7 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607734/Alima/biker_estampa_mudras_zvpqpi.jpg',
         categoryId: 'bikers',
+        cartCount: 0,
     },
     {
         id: 7,
@@ -54,5 +60,6 @@ export const products = [
         stock: 10,
         img: 'https://res.cloudinary.com/peuquedev/image/upload/v1637607741/Alima/biker_estampa_psicodelica_heqmn2.jpg',
         categoryId: 'bikers',
+        cartCount: 0,
     },
 ];

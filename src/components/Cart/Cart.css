@@ -1,0 +1,14 @@
+.imagen-card {
+    width: 50px;
+    height: 90px;
+    margin-left: 40px;
+}
+
+.cuerpo-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.textoCuerpo--margin {
+    margin-top: 20px;
+}
