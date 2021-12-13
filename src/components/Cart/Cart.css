@@ -12,3 +12,17 @@
 .textoCuerpo--margin {
     margin-top: 20px;
 }
+
+.btn {
+    font-size: 16px;
+}
+
+.btn-secondary {
+    border-radius: 15px;
+}
+
+.countNumber {
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 20px 20px 0px 20px;
+}

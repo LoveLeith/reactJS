@@ -21,7 +21,7 @@ const Cart = () => {
                             <div className="card-body cuerpo-body">
                                 <h5 className="card-title textoCuerpo--fontFamily textoCuerpo--fontSize textoCuerpo--margin">{item.name}</h5>
                                 <button className="btn-dark btn-add"> + </button>
-                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize textoCuerpo--margin">{item.cartCount}</p>
+                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize textoCuerpo--margin">{item.cantidad}</p>
                                 <button className="btn-dark btn-sub"> - </button>
                                 <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize textoCuerpo--margin">Precio: ${item.price}</p>
                                 <button className = "btn-dark btn-delete" onClick = {() => deleteProduct(item)}> x </button>
