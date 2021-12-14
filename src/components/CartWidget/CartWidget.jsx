@@ -6,13 +6,15 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
     const {unidades} = useContext(CartContext);
 
-    return ( 
+    return ( unidades() === 0 ? <></> :
+    
         <>
             <div className = "cartContainer">
             <IoCartOutline className = "cart" />
             <span>{unidades()}</span>
             </div>
-        </>  
+        </> 
+
     )
 }
 
