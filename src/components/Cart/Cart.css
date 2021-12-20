@@ -1,3 +1,32 @@
+.cartTitle {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.cartSubtitle {
+    font-family: sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cartText {
+    font-family: sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cartContainer {
+    width: 99%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
 .imagen-card {
     width: 50px;
     height: 90px;
@@ -25,16 +54,14 @@
     margin-left: 40px;
 }
 
-.countNumber {
-    font-family: sans-serif;
-    font-size: 16px;
-    margin: 20px 20px 0px 20px;
+.btn-mb {
+    margin-bottom: 30px;
 }
 
 .priceContainer {
     display: flex;
     justify-content: flex-start;
-    margin: 50px 20px 20px 50px;
+    margin: 50px 0px 20px 100px;
 }
 
 .totalPrice {
@@ -43,22 +70,18 @@
     font-weight: bold;
 }
 
-.zeroProductsContainer {
+.deleteProducts {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0px 20px 50px;
+}
+
+.formContainer {
+    width: 80%;
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
-    padding: 40px;
-    margin-top: 90px;
-}
-
-.zeroProductsTitle {
-    font-family: sans-serif;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.zeroProductsSubtitle {
-    font-family: sans-serif;
-    font-size: 20px;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }

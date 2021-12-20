@@ -1,0 +1,19 @@
+.card-width {
+    width: 90%;
+}
+
+.textoCuerpo--fontFamily {
+    font-family: sans-serif;
+}
+
+.textoCuerpo--fontWeight{
+    font-weight: bold;
+}
+
+.textoCuerpo--fontSize {
+    font-size: 16px;
+}
+
+.btn-sm {
+    font-size: 16px;
+}

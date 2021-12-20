@@ -1,6 +1,5 @@
 export const products = [
     {
-        id: 1,
         name: 'Top Iris Estampa Baby',
         price: 2900,
         stock: 10,
@@ -9,7 +8,6 @@ export const products = [
         cartCount: 0,
     },
     {
-        id: 2,
         name: 'Top Lily Estampa Amatista',
         price: 2900,
         stock: 10,
@@ -18,7 +16,6 @@ export const products = [
         cartCount: 0,
     },
     {
-        id: 3,
         name: 'Top Iris Flower Power',
         price: 2900,
         stock: 10,
@@ -27,7 +24,6 @@ export const products = [
         cartCount: 0,
     },
     {
-        id: 4,
         name: 'Biker Estampa Baby',
         price: 2900,
         stock: 10,
@@ -36,7 +32,6 @@ export const products = [
         cartCount: 0,
     },
     {
-        id: 5,
         name: 'Biker Estampa Flower Power',
         price: 2900,
         stock: 10,
@@ -45,7 +40,6 @@ export const products = [
         cartCount: 0,
     },
     {
-        id: 6,
         name: 'Biker Estampa Mudras',
         price: 2900,
         stock: 10,
@@ -54,7 +48,6 @@ export const products = [
         cartCount: 0,
     },
     {
-        id: 7,
         name: 'Biker Estampa Psicodélica',
         price: 2900,
         stock: 10,

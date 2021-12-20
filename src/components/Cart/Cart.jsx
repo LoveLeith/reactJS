@@ -1,53 +1,74 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { useDeleteFromCart } from '../../context/CartContext';
 import './Cart.css';
-import { Link } from 'react-router-dom';
+import CartDetail from './CartDetail.jsx';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
+import Order from './Order';
 
 const Cart = () => {
 
-    const {cart, borrar, total} = useContext(CartContext);
-    const deleteProduct = useDeleteFromCart();
+    const {cart, deleteAll, total, getUser} = useContext(CartContext);
+    const [goToTicket, setGoToTicket] = useState(false);
+    const [form, getForm] = useState ({ nombre: '', email: ''});
 
-    return ( cart.length === 0 ? 
-        <div className = "zeroProductsContainer">
-            <h1 className = "zeroProductsTitle">Aún no hay productos en el carrito</h1>
-            <p className = "zeroProductsSubtitle">Hacé clic en el botón para volver al Home</p>
-            <Link to='/'>
-                <button type="button" className="btn btn-secondary btn-sm">Volver al Home</button>
-            </Link>
-        </div>
-        :
+    const fillInForm = (e) => {
+        const { name, value } = e.target;
+        getForm({
+            ...form,
+            [name]: value,
+        });
+    }
+
+    const date = new Date();
+
+    const confirmPurchase = () => {
+        getUser(form);
+        const db = getFirestore();
+        const ref = collection(db, 'ticket');
+        const newOrder = {
+            buyer: form.email,
+            items: cart,
+            date: date,
+            total: total(),
+        };
+        addDoc(ref, newOrder);
+        setGoToTicket(true);
+        deleteAll();
+    }
+
+    return ( 
         <>
-            {cart.map((item) =>(
-                <div key = {item.id}>
-                    <div className="card mb-3">
-                    <div className="row no-gutters">
-                        <div className="col-md-2">
-                            <img src={item.img} className="card-img imagen-card" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body cuerpo-body">
-                                <h5 className="card-title textoCuerpo--fontFamily textoCuerpo--fontSize textoCuerpo--margin">{item.name}</h5>
-                                <button className="btn-dark btn-add"> + </button>
-                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize textoCuerpo--margin">{item.cantidad}</p>
-                                <button className="btn-dark btn-sub"> - </button>
-                                <p className="card-text textoCuerpo--fontFamily textoCuerpo--fontWeight textoCuerpo--fontSize textoCuerpo--margin">Precio: ${item.price}</p>
-                                <button className = "btn-dark btn-delete" onClick = {() => deleteProduct(item)}> x </button>
-                            </div>          
-                        </div>
+            <>
+            {!goToTicket ? (
+                <>
+                    <div className = "cartContainer">
+                        <h1 className = "cartTitle">Carrito de compras</h1>
+                        {cart.map((prod) => (
+                            <CartDetail key = {prod.id} prod ={prod} />
+                        ))}
                     </div>
-                </div>  
-                </div>
-            ))}
-
-            <div className = "priceContainer">
-                <p className = "totalPrice">Total: ${total()}</p>
-            </div>
-            
-            <button onClick={borrar} type="button" className="btn btn-secondary btn-sm btn-ml">Eliminar productos</button>
-        </>
-    )
+                    <div className = "priceContainer">
+                                <p className = "totalPrice">Total: ${total()}</p>
+                            </div>           
+                            <div className = "deleteProducts">
+                                <button onClick={deleteAll} type="button" className="btn btn-secondary btn-sm btn-ml btn-mb">Eliminar productos</button>
+                            </div>
+                        <h2 className ="cartSubtitle">Por favor, ingresá tu email y tu nombre para poder confirmar tu compra.</h2>
+                        <p className = "cartText">Una vez completados estos datos, hacé clic en "Confirmar compra" para ver los productos que seleccionaste</p>
+                        <form className = "formContainer" method = "POST" onSubmit = {confirmPurchase}>
+                            <input onChange = {fillInForm} type = 'email' name = 'email' placeholder = 'email' />
+                            <input onChange = {fillInForm} type = 'text' name = 'nombre' placeholder = 'nombre' />
+                            <button disabled = {cart?.length === 0 || form.nombre === '' || form.email === ''}>Confirmar compra</button>                                      
+                        </form>                    
+                </>               
+            ) : (
+                <>
+                    <Order />
+                </>
+            )}           
+            </>       
+        </>        
+    );
 };
 
 export default Cart;

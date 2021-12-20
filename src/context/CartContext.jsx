@@ -5,10 +5,12 @@ export const CartContext = React.createContext()
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
+    const [userEmail, setUserEmail] = useState ('');
     
     const isInCart = (item) => {
         return cart?.findIndex(element => element.id === item.id)
     }
+    
     const addToCart = (item, cantidad) => {
         total();
         if(isInCart(item) === -1) { 
@@ -39,7 +41,7 @@ export const CartProvider = ({children}) => {
     }
 
     //Borro todos los items del carrito
-    const borrar = () => {
+    const deleteAll = () => {
         setCart([])
     }
 
@@ -49,8 +51,12 @@ export const CartProvider = ({children}) => {
         return unidadesCart;
     }
 
+    const getUser = (form) => {
+        setUserEmail(form);
+    }
+
     return(
-        <CartContext.Provider value = {{ addToCart, cart, borrar, deleteFromCart, total, unidades }}>
+        <CartContext.Provider value = {{ addToCart, cart, deleteAll, deleteFromCart, total, unidades, getUser, userEmail }}>
             {children}
         </CartContext.Provider>
     )

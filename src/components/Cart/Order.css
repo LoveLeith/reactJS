@@ -1,0 +1,13 @@
+.orderTitle {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.containerLink {
+    padding: 10px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}

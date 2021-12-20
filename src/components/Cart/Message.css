@@ -1,0 +1,17 @@
+.ticketContainer {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 30px;
+    padding: 7px;
+}
+
+.ticketId {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.ticketText {
+    font-family: sans-serif;
+    font-size: 16px;
+}
