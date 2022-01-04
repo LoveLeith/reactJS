@@ -35,17 +35,14 @@ export const CartProvider = ({children}) => {
         setCart(cantidad);
     }
 
-    //Borro un producto especifico del carrito
     const deleteFromCart = (item) => {
         setCart(cart.filter(element => element.id !== item.id))
     }
 
-    //Borro todos los items del carrito
     const deleteAll = () => {
         setCart([])
     }
 
-    //Muestro las unidades totales del carrito en el icono del carrito
     const unidades = () => {
         const unidadesCart = cart.reduce((x, y) => x + y.cantidad, 0);
         return unidadesCart;

@@ -10,8 +10,8 @@ const CartWidget = () => {
     
         <>
             <div className = "cartContainer">
-            <IoCartOutline className = "cart" />
-            <span>{unidades()}</span>
+                <IoCartOutline className = "cart" />
+                <span>{unidades()}</span>
             </div>
         </> 
 

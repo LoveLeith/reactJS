@@ -8,15 +8,10 @@ const ItemCount = ({stock, onAdd }) => {
 
     const add = () => {
         number !== stock && setNumber(number + 1);
-        /*setNumber(number + 1)*/
     };
 
     const substract = () => {
         number !== 0 && setNumber(number - 1);
-        /*setNumber(number - 1)
-        if(number == 0) {
-            setNumber(0);
-        }*/
     };
 
     return (

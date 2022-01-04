@@ -24,8 +24,7 @@ const CartDetail = ({ prod }) => {
                     </div>
                 </div>  
             </>
-    )
-        
+    )       
 }
 
 export default CartDetail;

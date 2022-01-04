@@ -14,6 +14,8 @@ Menú de navegación
 
 - Bikers - En esta vista se visualizan solamente los productos correspondientes a esta categoría
 
+- Cart - En esta vista se visualizan los productos que el usuario desea comprar, el formulario que debe llenar con sus datos para confirmar la compra y la orden de compra de lo que adquirió.
+
 Vista de detalles: vista con todos los detalles del producto.
 
 ## Instalación

@@ -31,7 +31,6 @@ const ItemListContainer = (props) => {
         });
     }, [categoryId]);
     
-
     return (loader ? <h1>Loading products...</h1>:
         <div className = "greetingContainer">
             <h1 className = "greetingStyle">{props.greeting}</h1>
