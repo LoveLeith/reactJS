@@ -11,3 +11,15 @@
     margin-left: 30px;
     margin-bottom: 40px;
 }
+
+.btn {
+    font-size: 16px;
+}
+
+.btn-secondary {
+    border-radius: 15px;
+}
+
+.btn-ml {
+    margin-left: 40px;
+}

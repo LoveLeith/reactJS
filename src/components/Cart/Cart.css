@@ -85,3 +85,19 @@
     margin-top: 50px;
     margin-bottom: 60px;
 }
+
+.emptyCartTernaryContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.zeroProductsContainer {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.fullCartTernaryContainer {
+    width: 99%;
+}

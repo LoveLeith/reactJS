@@ -4,8 +4,7 @@ import ItemCount from './components/ItemCount/ItemCount.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer.jsx';
 import Cart from './components/Cart/Cart.jsx';
-import { CartProvider } from './context/CartContext.jsx';
-
+import { CartProvider } from './context/CartContext'
 
 const App = () => {
 
@@ -21,8 +20,7 @@ const App = () => {
           <Route path="/Cart" element={<Cart />}/> 
         </Routes>
       </BrowserRouter>
-    </CartProvider>
-    
+    </CartProvider>         
   );
 }
 

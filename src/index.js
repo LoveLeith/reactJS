@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 require('dotenv').config();
 
+
 /*import { products } from './components/ItemListContainer/Items.jsx';
 import { collection, addDoc, getFirestore } from 'firebase/firestore';*/
 
@@ -14,7 +15,7 @@ import { collection, addDoc, getFirestore } from 'firebase/firestore';*/
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: process.env.REACT_APP_API_KEY_FIREBASE,
   authDomain: "tiendaalimafirebase.firebaseapp.com",
   projectId: "tiendaalimafirebase",
   storageBucket: "tiendaalimafirebase.appspot.com",
@@ -33,7 +34,7 @@ products.map((product) => addDoc(ref, product));*/
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

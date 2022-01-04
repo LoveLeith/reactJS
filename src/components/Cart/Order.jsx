@@ -49,7 +49,7 @@ const Order = () => {
             )}
             <Link to='/'>
                 <div className = "containerLink">
-                    <p>Volver al Home</p>
+                    <button type="button" className="btn btn-secondary btn-sm">Volver al Home</button>
                 </div>
            </Link>
         </div>
